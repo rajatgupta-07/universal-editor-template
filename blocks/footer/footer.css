@@ -1,123 +1,152 @@
-/* 🌤️ Airy Premium Glass Footer */
+/* 🧊 Futuristic Glass Footer */
 footer {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(
+    135deg,
+    rgba(20, 25, 35, 0.55),
+    rgba(35, 45, 65, 0.45),
+    rgba(10, 15, 25, 0.7)
+  );
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.88);
   font-size: var(--body-font-size-xs);
   overflow: hidden;
   animation: fadeInFooter 1s ease-out;
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 -6px 20px rgba(0, 0, 0, 0.35),
+    inset 0 1px 8px rgba(255, 255, 255, 0.05);
 }
 
-/* ✨ Soft Reflection Overlay */
+/* ✨ Dynamic Reflection Layer */
 footer::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: -30%;
+  width: 160%;
+  height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 30%,
     transparent 70%
   );
   opacity: 0.2;
+  mix-blend-mode: overlay;
+  transform: translateY(0);
+  animation: reflectionSweep 6s ease-in-out infinite alternate;
   pointer-events: none;
-  transition: opacity 0.8s ease-in-out;
 }
 
-footer:hover::before {
-  opacity: 0.35;
+/* 🪞 Neon Edge Glow */
+footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(150, 200, 255, 0.6), transparent);
+  box-shadow: 0 0 18px rgba(120, 200, 255, 0.4);
+  opacity: 0.5;
+  pointer-events: none;
 }
 
-/* 🧊 Footer Container */
-footer .footer {
-  position: relative;
-  z-index: 2;
-}
-
+/* 💎 Footer Content */
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
   padding: 60px 24px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
   text-align: center;
   opacity: 0;
-  transform: translateY(12px);
-  animation: fadeUpContent 1s ease forwards 0.2s;
+  transform: translateY(16px);
+  animation: fadeUpContent 1.2s ease forwards 0.3s;
 }
 
-/* 🩵 Logo */
-footer .footer-logo img {
-  width: 120px;
-  height: auto;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-footer .footer-logo img:hover {
-  opacity: 1;
-  transform: scale(1.03);
-}
-
-/* 🔗 Footer Links */
-footer .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 8px;
-}
-
-footer .footer-links a {
-  color: rgba(255, 255, 255, 0.75);
+/* 🔗 Futuristic Links */
+footer .footer a {
+  color: rgba(200, 220, 255, 0.85);
   text-decoration: none;
+  position: relative;
+  margin: 0 10px;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   transition: color 0.3s ease, text-shadow 0.4s ease;
 }
 
-footer .footer-links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-}
-
-/* 🌫️ Subtle Divider */
-footer .footer-divider {
-  width: 60%;
+footer .footer a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  margin: 16px auto;
-  animation: fadeInDivider 1.2s ease forwards;
-  opacity: 0;
+  background: linear-gradient(90deg, #77baff, #e0baff);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(140, 190, 255, 0.4);
 }
 
-/* 💬 Footer Text */
+footer .footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(170, 210, 255, 0.8);
+}
+
+footer .footer a:hover::after {
+  width: 100%;
+}
+
+/* 💬 Text Styling */
 footer .footer p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.6);
-  transition: color 0.3s ease;
+  margin: 10px 0;
+  color: rgba(240, 240, 255, 0.65);
   font-weight: 400;
+  transition: color 0.3s ease;
 }
 
 footer .footer p:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* 💫 Responsive Layout */
+/* 🩵 Footer Logo */
+footer .footer-logo img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(160, 200, 255, 0.3));
+  opacity: 0.9;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+footer .footer-logo img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* 💫 Footer Links Layout */
+footer .footer-links {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ⚡ Depth Divider */
+footer .footer-divider {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(150, 200, 255, 0.25), transparent);
+  margin: 20px auto;
+  opacity: 0;
+  animation: fadeInDivider 1.5s ease forwards 0.6s;
+}
+
+/* 🧭 Responsive Layout */
 @media (min-width: 900px) {
   footer .footer > div {
-    flex-direction: column;
-    padding: 64px 32px 36px;
-  }
-
-  footer .footer-links {
-    gap: 24px;
+    padding: 70px 32px 36px;
   }
 
   footer .footer-logo img {
@@ -125,11 +154,11 @@ footer .footer p:hover {
   }
 }
 
-/* 🌟 Animations */
+/* 🌠 Animations */
 @keyframes fadeInFooter {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -140,7 +169,7 @@ footer .footer p:hover {
 @keyframes fadeUpContent {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -156,5 +185,16 @@ footer .footer p:hover {
   to {
     opacity: 1;
     transform: scaleX(1);
+  }
+}
+
+@keyframes reflectionSweep {
+  0% {
+    transform: translateX(-20%) translateY(0);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(20%) translateY(0);
+    opacity: 0.3;
   }
 }
