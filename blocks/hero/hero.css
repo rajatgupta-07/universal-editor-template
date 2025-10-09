@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-/* ✨ Premium Hero Section */
+/* ✨ Minimal Hero Section */
 .hero {
   position: relative;
   padding: 60px 24px;
@@ -15,83 +15,72 @@
   overflow: hidden;
   border-radius: 20px;
 
-  /* 🌌 Polished Gradient + Glass Layer */
-  background: linear-gradient(135deg, rgba(15, 20, 40, 0.8), rgba(30, 35, 65, 0.7), rgba(10, 15, 25, 0.9));
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  transition: transform 0.6s ease, box-shadow 0.6s ease, background 0.6s ease;
+  /* 🌿 Light Minimal Background */
+  background: linear-gradient(135deg, rgba(240, 248, 255, 0.85), rgba(230, 240, 255, 0.85));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 .hero:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 20px rgba(100, 180, 255, 0.15);
-  background: linear-gradient(135deg, rgba(25, 30, 50, 0.9), rgba(50, 60, 90, 0.8), rgba(15, 20, 30, 0.9));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* 💎 Subtle Glow Accents */
+/* 💎 Subtle Glow Accent Removed for Minimal Look */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.12), transparent 60%),
-              radial-gradient(circle at 80% 70%, rgba(100, 200, 255, 0.15), transparent 70%);
-  mix-blend-mode: overlay;
-  opacity: 0.7;
-  transition: opacity 0.6s ease;
+  background: none;
   pointer-events: none;
-}
-
-.hero:hover::before {
-  opacity: 1;
 }
 
 /* 🩵 Headline */
 .hero h1 {
   max-width: 1000px;
   margin: 0 auto;
-  color: #f7faff;
+  color: #1a1a1a;
   font-weight: 700;
   letter-spacing: 0.5px;
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
   z-index: 2;
-  transition: transform 0.4s ease, text-shadow 0.4s ease, color 0.4s ease;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
 
 .hero:hover h1 {
-  transform: translateY(-2px);
-  text-shadow: 0 6px 24px rgba(120, 190, 255, 0.3);
-  color: #ffffff;
+  transform: translateY(-1px);
+  color: #111;
 }
 
-/* 🌠 Background Image Layer */
+/* 🌠 Background Image Layer - softened */
 .hero picture {
   position: absolute;
   z-index: -2;
   inset: 0;
-  box-sizing: border-box;
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  filter: brightness(0.75) contrast(1.05) saturate(110%);
+  filter: brightness(0.85) contrast(1.0) saturate(105%);
   transition: filter 1s ease, transform 1s ease;
 }
 
 .hero:hover img {
-  filter: brightness(0.9) contrast(1.15) saturate(125%);
-  transform: scale(1.03);
+  filter: brightness(0.9) contrast(1.05) saturate(110%);
+  transform: scale(1.02);
 }
 
-/* 🪶 Floating Micro Interaction */
+/* 🪶 Floating Micro Interaction - lighter */
 @keyframes floatGlow {
   0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-3px) scale(1.01); }
+  50% { transform: translateY(-2px) scale(1.005); }
 }
 
 .hero:hover {
