@@ -1,82 +1,37 @@
-.hero-container .hero-wrapper { 
-  max-width: 95%;
+.hero-container .hero-wrapper {
+  max-width: unset;
   padding: 0;
 }
 
-/* ✨ Simplified Minimal Hero Section */
 .hero {
   position: relative;
-  padding: 60px 24px;
+  padding: 40px 24px;
   min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 16px;
-
-  /* 🩶 Soft Neutral Background */
-  background-color: #f7f9fc; /* light neutral tone */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero:hover {
-  background-color: #f9fbfe;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* No overlays or glow layers */
-.hero::before {
-  content: none;
-}
-
-/* 🩵 Headline */
 .hero h1 {
-  max-width: 900px;
-  margin: 0 auto;
-  color: #202020;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.25;
-  text-shadow: none;
-  transition: color 0.3s ease;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
 }
 
-.hero:hover h1 {
-  color: #111;
-}
-
-/* 🌠 Background Image Layer (Reduced prominence) */
 .hero picture {
   position: absolute;
   z-index: -1;
   inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
-  height: 70%; /* reduced image height */
-  opacity: 0.6; /* softer visibility */
-  filter: brightness(0.9) contrast(1) saturate(1);
-  transition: opacity 0.4s ease;
+  height: 100%;
 }
 
-.hero:hover img {
-  opacity: 0.7; /* subtle hover feedback */
-}
-
-/* 📱 Responsive Adjustments */
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .hero {
-    padding: 80px 40px;
-    min-height: 360px;
-  }
-
-  .hero img {
-    height: 65%;
+    padding: 40px 32px;
   }
 }
