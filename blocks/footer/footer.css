@@ -1,4 +1,4 @@
-/* 🌌 Futuristic Glass Footer with Subtle Motion */
+/* 🌌 Futuristic Glass Footer with Interactive Depth */
 footer {
   position: relative;
   background: linear-gradient(
@@ -7,16 +7,24 @@ footer {
     rgba(35, 45, 65, 0.45),
     rgba(10, 15, 25, 0.7)
   );
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.88);
   font-size: var(--body-font-size-xs);
   overflow: hidden;
   box-shadow:
-    0 -6px 20px rgba(0, 0, 0, 0.35),
-    inset 0 1px 8px rgba(255, 255, 255, 0.05);
+    0 -8px 28px rgba(0, 0, 0, 0.35),
+    inset 0 2px 12px rgba(255, 255, 255, 0.05);
   animation: footerFadeIn 1s ease-out forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+footer:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 -12px 36px rgba(0, 0, 0, 0.45),
+    inset 0 3px 14px rgba(255, 255, 255, 0.08);
 }
 
 /* ✨ Sliding & Glowing Reflection */
@@ -63,8 +71,8 @@ footer .footer a {
 
 footer .footer a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(170, 210, 255, 0.8);
-  transform: translateY(-2px);
+  text-shadow: 0 0 12px rgba(170, 210, 255, 0.9), 0 0 20px rgba(120, 180, 255, 0.5);
+  transform: translateY(-2px) scale(1.03);
 }
 
 footer .footer a::after {
@@ -102,7 +110,7 @@ footer .footer p:hover {
 footer .footer-logo img {
   width: 120px;
   height: auto;
-  filter: drop-shadow(0 0 12px rgba(160, 200, 255, 0.3));
+  filter: drop-shadow(0 0 14px rgba(160, 200, 255, 0.35));
   opacity: 0;
   transform: translateY(10px);
   animation: logoFadeUp 1s ease forwards 0.3s;
@@ -110,7 +118,7 @@ footer .footer-logo img {
 }
 
 footer .footer-logo img:hover {
-  transform: scale(1.05);
+  transform: scale(1.06) rotateZ(-1deg);
   opacity: 1;
 }
 
@@ -132,7 +140,7 @@ footer .footer-divider {
 
 @keyframes reflectionSweep {
   0% { transform: translateX(-20%); opacity: 0.15; }
-  100% { transform: translateX(20%); opacity: 0.3; }
+  100% { transform: translateX(20%); opacity: 0.35; }
 }
 
 @keyframes contentFadeUp {
