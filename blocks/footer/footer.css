@@ -37,11 +37,16 @@ footer::after {
 footer .footer {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 60px;
   position: relative;
   z-index: 1;
+}
+
+/* Main Content Wrapper */
+footer .footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 40px;
 }
 
 /* 🏢 Brand Column */
@@ -59,6 +64,8 @@ footer .footer-logo {
   font-weight: 700;
   color: #fff;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 footer .footer-logo::before {
@@ -72,12 +79,14 @@ footer .footer-tagline {
   line-height: 1.6;
   max-width: 320px;
   margin-bottom: 24px;
+  font-size: 14px;
 }
 
 /* 🔗 Social Icons */
 footer .footer-social {
   display: flex;
   gap: 16px;
+  margin-bottom: 40px;
 }
 
 footer .footer-social a {
@@ -107,20 +116,20 @@ footer .footer-column {
 }
 
 footer .footer-column h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: rgb(255 255 255 / 70%);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 24px 0;
+  text-transform: capitalize;
 }
 
 footer .footer-column a {
   color: rgb(255 255 255 / 80%);
   text-decoration: none;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   transition: all 0.2s ease;
   display: inline-block;
+  font-size: 14px;
 }
 
 footer .footer-column a:hover {
@@ -132,23 +141,25 @@ footer .footer-column a:hover {
 footer .back-to-top {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   background: transparent;
   border: 1.5px solid rgb(255 255 255 / 20%);
   color: rgb(255 255 255 / 85%);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 32px;
+  border-radius: 4px;
 }
 
 footer .back-to-top::before {
-  content: "⌃";
+  content: "↑";
   font-size: 16px;
+  font-weight: 700;
 }
 
 footer .back-to-top:hover {
@@ -160,7 +171,6 @@ footer .back-to-top:hover {
 
 /* 🌊 Bottom Bar with Accent */
 footer .footer-bottom {
-  margin-top: 48px;
   padding-top: 24px;
   border-top: 1px solid rgb(255 255 255 / 10%);
   text-align: center;
@@ -171,12 +181,11 @@ footer .footer-bottom::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e8a558, transparent);
-  opacity: 0.3;
+  background: linear-gradient(90deg, transparent, #e8a558 50%, transparent);
+  opacity: 0.4;
 }
 
 footer .footer-bottom p {
@@ -187,7 +196,7 @@ footer .footer-bottom p {
 
 /* 📱 Responsive Layout */
 @media (max-width: 900px) {
-  footer .footer {
+  footer .footer-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
