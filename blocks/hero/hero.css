@@ -36,13 +36,12 @@
   }
 } */
 
-/* Corrected hero CSS - image visible behind a soft overlay */
-.hero-container .hero-wrapper {
+.hero-container .hero-wrapper { 
   max-width: unset;
   padding: 0;
 }
 
-/* Hero */
+/* ✨ Minimal Futuristic Hero Section */
 .hero {
   position: relative;
   padding: 40px 24px;
@@ -51,70 +50,94 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;           /* keeps rounded corners on children */
+  overflow: hidden;
   border-radius: 16px;
-  background-color: transparent; /* keep transparent so picture is visible */
+  background: var(--surface-color, #f8f9fb);
+  color: var(--foreground-color, #111);
   font-family: 'Inter', 'Poppins', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   letter-spacing: 0.06em;
 }
 
-/* Background image container - placed above the hero's background but below overlay/text */
-.hero picture {
-  position: absolute;
-  inset: 0;
-  z-index: 0;                 /* <-- important: not negative */
-  display: block;
-  pointer-events: none;
+/* 🩶 Headline */
+.hero h1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #0d0d0d;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.25;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(90deg, #9edcff, #e2b8ff, #9edcff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holoShift 6s ease-in-out infinite;
 }
 
-/* Image fills the picture area and covers nicely */
-.hero img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -o-object-fit: cover;
-  opacity: 0.95;
-  filter: brightness(0.92) contrast(1);
-  transition: opacity 0.3s ease, filter 0.35s ease;
-}
-
-/* Soft neutral overlay above the image to keep minimal look and readability */
-.hero::after {
+/* 🌈 Holographic Reflection Overlay */
+.hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: rgba(247, 249, 252, 0.72); /* tweak alpha to make image stronger/weaker */
-  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(200, 255, 255, 0.08) 40%,
+    rgba(255, 200, 255, 0.08) 60%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+  animation: holoGlow 10s ease-in-out infinite alternate;
   pointer-events: none;
-  backdrop-filter: blur(0); /* optional: change or remove */
+  z-index: 1;
 }
 
-/* Headline sits above overlay and image */
-.hero h1 {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #111; /* text color above overlay */
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.2;
-  text-transform: uppercase; /* optional */
-  -webkit-font-smoothing: antialiased;
+/* 🌠 Background Image Layer */
+.hero picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  box-sizing: border-box;
 }
 
-/* Gentle hover (optional) */
-.hero:hover img {
-  filter: brightness(0.96) contrast(1.02);
+.hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  filter: brightness(0.85) contrast(1.05);
 }
 
-/* Responsive */
-@media (min-width: 900px) {
-  .hero {
-    padding: 60px 40px;
-    min-height: 360px;
+/* ✨ Holographic Animations */
+@keyframes holoShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
+@keyframes holoGlow {
+  0% {
+    opacity: 0.4;
+    transform: translateX(-10px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(-10px);
+  }
+}
+
+/* 📱 Responsive */
+@media (width >= 900px) {
+  .hero {
+    padding: 60px 40px;
+  }
+}
