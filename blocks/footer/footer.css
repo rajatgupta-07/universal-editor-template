@@ -1,81 +1,204 @@
-/* 🩶 Minimal Professional Footer */
+/* 🎨 Modern Multi-Column Footer */
 footer {
   position: relative;
-  background: rgb(25 30 40 / 85%);
-  backdrop-filter: blur(10px);
-  color: rgb(255 255 255 / 85%);
+  background: linear-gradient(135deg, #0d3d3d 0%, #1a4f4f 50%, #0d3d3d 100%);
+  color: rgb(255 255 255 / 90%);
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.6;
-  border-top: 1px solid rgb(255 255 255 / 8%);
-  box-shadow: 0 -4px 16px rgb(0 0 0 / 15%);
-  text-align: center;
-  padding: 60px 24px 40px;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.7;
+  padding: 60px 40px 24px;
+  overflow: hidden;
 }
 
-/* 🩵 Footer Container */
+/* Geometric accent lines */
+footer::before,
+footer::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgb(255 255 255 / 6%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+footer::before {
+  top: -200px;
+  right: 10%;
+}
+
+footer::after {
+  bottom: -250px;
+  left: 15%;
+}
+
+/* 📦 Footer Container */
 footer .footer {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
 }
 
-/* 🧭 Footer Logo */
-footer .footer-logo img {
-  width: 120px;
-  height: auto;
-  opacity: 0.9;
-  margin-bottom: 24px;
-  transition: opacity 0.3s ease;
+/* 🏢 Brand Column */
+footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-footer .footer-logo img:hover {
-  opacity: 1;
-}
-
-/* 🔗 Footer Links */
-footer .footer a {
-  color: rgb(230 235 245 / 80%);
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-footer .footer a:hover {
+footer .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
   color: #fff;
+  margin-bottom: 8px;
 }
 
-/* 🩶 Divider */
-footer .footer-divider {
-  width: 60%;
-  height: 1px;
+footer .footer-logo::before {
+  content: "▲";
+  color: #e8a558;
+  font-size: 24px;
+}
+
+footer .footer-tagline {
+  color: rgb(255 255 255 / 75%);
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+/* 🔗 Social Icons */
+footer .footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+footer .footer-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 8%);
+  border-radius: 6px;
+  color: rgb(255 255 255 / 80%);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+footer .footer-social a:hover {
+  background: rgb(255 255 255 / 15%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 📋 Navigation Columns */
+footer .footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer-column h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(255 255 255 / 70%);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer .footer-column a {
+  color: rgb(255 255 255 / 80%);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+footer .footer-column a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* 🔝 Back to Top Button */
+footer .back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1.5px solid rgb(255 255 255 / 20%);
+  color: rgb(255 255 255 / 85%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 32px;
+}
+
+footer .back-to-top::before {
+  content: "⌃";
+  font-size: 16px;
+}
+
+footer .back-to-top:hover {
   background: rgb(255 255 255 / 10%);
-  margin: 24px auto;
-  border-radius: 2px;
+  border-color: rgb(255 255 255 / 35%);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-/* 💬 Footer Text */
-footer .footer p {
-  margin: 8px 0;
-  color: rgb(235 240 255 / 60%);
-  font-weight: 400;
+/* 🌊 Bottom Bar with Accent */
+footer .footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  text-align: center;
+  position: relative;
 }
 
-/* 🌙 Subtle Hover Tone */
-footer:hover {
-  background: rgb(30 35 45 / 88%);
-  box-shadow: 0 -6px 20px rgb(0 0 0 / 20%);
+footer .footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e8a558, transparent);
+  opacity: 0.3;
 }
 
-/* 🌐 Responsive Layout */
+footer .footer-bottom p {
+  color: rgb(255 255 255 / 50%);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* 📱 Responsive Layout */
+@media (max-width: 900px) {
+  footer .footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  footer {
+    padding: 40px 24px 20px;
+  }
+}
+
 @media (min-width: 900px) {
   footer {
-    padding: 80px 32px 48px;
-  }
-  footer .footer-logo img {
-    width: 140px;
+    padding: 80px 48px 32px;
   }
 }
