@@ -1,16 +1,22 @@
-/* 🩶 Minimal Clean Footer */
+/* 🩶 Minimal Professional Footer */
 footer {
   position: relative;
-  background: linear-gradient(135deg, #141923, #1f2633);
+  background: rgba(25, 30, 40, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: rgba(255, 255, 255, 0.85);
-  font-size: var(--body-font-size-xs, 14px);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
   text-align: center;
-  padding: 50px 24px 30px;
+  padding: 60px 24px 40px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🩵 Footer Content */
+/* 🩵 Footer Container */
 footer .footer {
   max-width: 1100px;
   margin: 0 auto;
@@ -18,10 +24,10 @@ footer .footer {
 
 /* 🧭 Footer Logo */
 footer .footer-logo img {
-  width: 110px;
+  width: 120px;
   height: auto;
   opacity: 0.9;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   transition: opacity 0.3s ease;
 }
 footer .footer-logo img:hover {
@@ -30,40 +36,45 @@ footer .footer-logo img:hover {
 
 /* 🔗 Footer Links */
 footer .footer a {
-  color: rgba(220, 230, 255, 0.8);
+  color: rgba(230, 235, 245, 0.8);
   text-decoration: none;
   margin: 0 12px;
   font-weight: 500;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 footer .footer a:hover {
   color: #ffffff;
 }
 
-/* 🩶 Divider Line */
+/* 🩶 Divider */
 footer .footer-divider {
   width: 60%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   margin: 24px auto;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 /* 💬 Footer Text */
 footer .footer p {
   margin: 8px 0;
-  color: rgba(235, 240, 255, 0.65);
+  color: rgba(235, 240, 255, 0.6);
   font-weight: 400;
-  line-height: 1.6;
 }
 
-/* 🌐 Responsive Adjustments */
+/* 🌙 Subtle Hover Tone */
+footer:hover {
+  background: rgba(30, 35, 45, 0.88);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌐 Responsive Layout */
 @media (min-width: 900px) {
   footer {
-    padding: 70px 40px 36px;
+    padding: 80px 32px 48px;
   }
   footer .footer-logo img {
-    width: 130px;
+    width: 140px;
   }
 }
