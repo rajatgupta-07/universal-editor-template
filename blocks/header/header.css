@@ -6,22 +6,22 @@ header .nav-wrapper {
   backdrop-filter: blur(14px);
   background: linear-gradient(
     135deg,
-    rgba(25, 25, 35, 0.7),
-    rgba(45, 45, 65, 0.4),
-    rgba(20, 20, 30, 0.7)
+    rgb(25 25 35 / 70%),
+    rgb(45 45 65 / 40%),
+    rgb(20 20 30 / 70%)
   );
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
   transition: all 0.4s ease-in-out;
 }
 
 header .nav-wrapper:hover {
   background: linear-gradient(
     135deg,
-    rgba(35, 35, 55, 0.75),
-    rgba(60, 60, 80, 0.45)
+    rgb(35 35 55 / 75%),
+    rgb(60 60 80 / 45%)
   );
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 28px rgb(0 0 0 / 40%);
 }
 
 /* 🧭 Nav Base Layout */
@@ -44,7 +44,7 @@ header nav {
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
+    gap: 32px;
     max-width: 1264px;
     padding: 0 32px;
   }
@@ -57,25 +57,25 @@ header .nav-brand {
   font-weight: 700;
   line-height: 1;
   background: linear-gradient(90deg, #a0cfff, #e1d8ff);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
 }
 
 header .nav-brand:hover {
   transform: scale(1.04);
-  filter: drop-shadow(0 0 8px rgba(160, 200, 255, 0.6));
+  filter: drop-shadow(0 0 8px rgb(160 200 255 / 60%));
 }
 
 header nav .nav-brand img {
   width: 50px;
   height: auto;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+  filter: drop-shadow(0 0 6px rgb(255 255 255 / 15%));
   transition: filter 0.3s ease;
 }
 
 header nav .nav-brand img:hover {
-  filter: drop-shadow(0 0 12px rgba(180, 200, 255, 0.4));
+  filter: drop-shadow(0 0 12px rgb(180 200 255 / 40%));
 }
 
 /* 🍔 Hamburger Menu */
@@ -180,7 +180,7 @@ header nav .nav-sections ul {
 
 header nav .nav-sections li a {
   position: relative;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(255 255 255 / 85%);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -199,7 +199,7 @@ header nav .nav-sections li a::after {
 }
 
 header nav .nav-sections li a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 header nav .nav-sections li a:hover::after {
@@ -214,20 +214,19 @@ header nav .nav-tools {
   gap: 16px;
 }
 
-header nav .nav-tools button,
 header nav .nav-tools a {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgb(255 255 255 / 6%);
   backdrop-filter: blur(8px);
   border-radius: 12px;
   padding: 6px 14px;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(255 255 255 / 10%);
   transition: all 0.3s ease;
 }
 
 header nav .nav-tools button:hover,
 header nav .nav-tools a:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(255 255 255 / 15%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(160, 180, 255, 0.25);
+  box-shadow: 0 4px 12px rgb(160 180 255 / 25%);
 }
