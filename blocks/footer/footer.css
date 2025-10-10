@@ -39,6 +39,13 @@ footer .footer-brand {
   flex-direction: column;
   gap: 16px;
 }
+footer .footer img{
+  width: 80px;
+  height: auto ;
+  display: flex;
+  align-items: center;
+  
+}
 
 footer .footer-logo {
   display: flex;
@@ -54,9 +61,9 @@ footer .footer-logo {
 
 /* Target the image inside the footer logo */
 footer .footer-logo img {
-  height: 22px; /* Ideal small footer size */
-  width: auto;  /* Maintain aspect ratio */
-  object-fit: contain;
+   /* Ideal small footer size */
+  width: 80px;  /* Maintain aspect ratio */
+  object-fit: contain; 
   display: block;
   opacity: 0.9; /* Slightly subtle for footer aesthetics */
   transition: opacity 0.3s ease;
