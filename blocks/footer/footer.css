@@ -1,170 +1,69 @@
-/* 🌌 Futuristic Glass Footer with Interactive Depth */
+/* 🩶 Minimal Clean Footer */
 footer {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(20, 25, 35, 0.55),
-    rgba(35, 45, 65, 0.45),
-    rgba(10, 15, 25, 0.7)
-  );
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  background: linear-gradient(135deg, #141923, #1f2633);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--body-font-size-xs, 14px);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.88);
-  font-size: var(--body-font-size-xs);
-  overflow: hidden;
-  box-shadow:
-    0 -8px 28px rgba(0, 0, 0, 0.35),
-    inset 0 2px 12px rgba(255, 255, 255, 0.05);
-  animation: footerFadeIn 1s ease-out forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-footer:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 -12px 36px rgba(0, 0, 0, 0.45),
-    inset 0 3px 14px rgba(255, 255, 255, 0.08);
-}
-
-/* ✨ Sliding & Glowing Reflection */
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -30%;
-  width: 160%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.05) 30%,
-    transparent 70%
-  );
-  opacity: 0.2;
-  mix-blend-mode: overlay;
-  animation: reflectionSweep 6s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-/* 💎 Footer Content Sliding & Fading */
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 60px 24px 32px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: contentFadeUp 1s ease forwards 0.2s;
+  padding: 50px 24px 30px;
 }
 
-/* 🔗 Links Glowing Motion */
-footer .footer a {
-  color: rgba(200, 220, 255, 0.85);
-  text-decoration: none;
-  position: relative;
-  margin: 0 10px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  transition: color 0.3s ease, text-shadow 0.4s ease, transform 0.3s ease;
+/* 🩵 Footer Content */
+footer .footer {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-footer .footer a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(170, 210, 255, 0.9), 0 0 20px rgba(120, 180, 255, 0.5);
-  transform: translateY(-2px) scale(1.03);
-}
-
-footer .footer a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 1px;
-  background: linear-gradient(90deg, #77baff, #e0baff);
-  transition: width 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 8px rgba(140, 190, 255, 0.4);
-}
-
-footer .footer a:hover::after {
-  width: 100%;
-}
-
-/* 💬 Footer Text Fading & Sliding */
-footer .footer p {
-  margin: 10px 0;
-  color: rgba(240, 240, 255, 0.65);
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: textFadeUp 1s ease forwards 0.5s;
-  transition: color 0.3s ease;
-}
-
-footer .footer p:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* 🩵 Logo Motion */
+/* 🧭 Footer Logo */
 footer .footer-logo img {
-  width: 120px;
+  width: 110px;
   height: auto;
-  filter: drop-shadow(0 0 14px rgba(160, 200, 255, 0.35));
-  opacity: 0;
-  transform: translateY(10px);
-  animation: logoFadeUp 1s ease forwards 0.3s;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease;
 }
-
 footer .footer-logo img:hover {
-  transform: scale(1.06) rotateZ(-1deg);
   opacity: 1;
 }
 
-/* ⚡ Divider Fade */
+/* 🔗 Footer Links */
+footer .footer a {
+  color: rgba(220, 230, 255, 0.8);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease;
+}
+footer .footer a:hover {
+  color: #ffffff;
+}
+
+/* 🩶 Divider Line */
 footer .footer-divider {
   width: 60%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(150, 200, 255, 0.25), transparent);
-  margin: 20px auto;
-  opacity: 0;
-  animation: dividerFadeIn 1s ease forwards 0.6s;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 24px auto;
+  border-radius: 1px;
 }
 
-/* 🌠 Animations */
-@keyframes footerFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* 💬 Footer Text */
+footer .footer p {
+  margin: 8px 0;
+  color: rgba(235, 240, 255, 0.65);
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-@keyframes reflectionSweep {
-  0% { transform: translateX(-20%); opacity: 0.15; }
-  100% { transform: translateX(20%); opacity: 0.35; }
-}
-
-@keyframes contentFadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes textFadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes logoFadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes dividerFadeIn {
-  from { opacity: 0; transform: scaleX(0.8); }
-  to { opacity: 1; transform: scaleX(1); }
-}
-
-/* 🧭 Responsive Adjustments */
+/* 🌐 Responsive Adjustments */
 @media (min-width: 900px) {
-  footer .footer > div { padding: 70px 32px 36px; }
-  footer .footer-logo img { width: 140px; }
+  footer {
+    padding: 70px 40px 36px;
+  }
+  footer .footer-logo img {
+    width: 130px;
+  }
 }
