@@ -43,13 +43,28 @@ footer .footer-brand {
 footer .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 8px; /* Add spacing between logo and text */
   font-size: 10px;
   font-weight: 700;
   color: #1d1d1f;
   margin-bottom: 12px;
   text-transform: lowercase;
   letter-spacing: -0.5px;
+}
+
+/* Target the image inside the footer logo */
+footer .footer-logo img {
+  height: 22px; /* Ideal small footer size */
+  width: auto;  /* Maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+  opacity: 0.9; /* Slightly subtle for footer aesthetics */
+  transition: opacity 0.3s ease;
+}
+
+/* Optional hover refinement */
+footer .footer-logo img:hover {
+  opacity: 1;
 }
 
 footer .footer-logo::before {
